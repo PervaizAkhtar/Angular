@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <<head>
-      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>    
-  </head>
+
+<head>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
 
 <body>
 
-<!-- Directives -->
-<div ng-app="">
+<div ng-app="myApp" ng-controller="myController" ng-init="myCol='lightblue';quantity=10;cost=5;person={firstName:'Dev1',lastName:'Hero'};points=[1,2,3]" >
 
-  <p>Name : <input type="text" ng-model="name"></p>
-  <h1>Hello {{name}}</h1>
 
+<p> first Name : <input type="text" style="background-color:{{myCol}}"  ng-model="firstName" /> <span ng-bind="firstName" > </span> </p>
+<p> last Name : <input type="text" style="background-color:{{myCol}}" ng-model="lastName" /> <span ng-bind="lastName"></span> </p> 
+
+
+Full Name :  {{firstName + " " +  lastName }}
+
+<br>
+
+Sum value : {{ 5 + 1}}
+
+<br>
+
+Items value : {{quantity * cost}}
+
+<br>
+
+<p> Value in span : <span ng-bind="quantity * cost" /> </p>
+
+<br>
+
+<p> The name using object is {{person.firstName}} , {{person.lastName}} </p>
+
+<br>
+<p> The Angular array is {{points[2]}} , <span data-ng-bind="points[2]"></span> </p>
 </div>
 
+
+<script>
+  
+  var app  = angular.module('myApp',[]);
+  app.controller('myController',function($scope){
+    $scope.firstName='Pervaiz';
+    $scope.lastName='Akhtar';
+  });
+
+</script>
+
+
+
+
+
 </body>
+
 </html> 

@@ -1,0 +1,5 @@
+Angular js controller controle the application 
+ng-app directive define the application
+
+ng-app define the application 
+ng-controller - directive define controllers  
